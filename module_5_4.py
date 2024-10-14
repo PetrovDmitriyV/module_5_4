@@ -17,13 +17,7 @@ class House:
     houses_history = []
 
     def __new__(cls, *args):
-        names = list(args)
-        for key in names:
-            if isinstance(key, int):
-                continue
-            else:
-                names = [key]
-                cls.houses_history = cls.houses_history + names
+        cls.houses_history.append(args[0])
         return object.__new__(cls)
 
     def __init__(self, name, age):
